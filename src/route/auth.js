@@ -1,34 +1,42 @@
-// Підключаємо роутер до бек-енду
 // Підключаємо технологію express для back-end сервера
 const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
+
+const { User } = require('../class/user')
 
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/signup', function (req, res) {
 	// res.render генерує нам HTML сторінку
 
 	// ↙️ cюди вводимо назву файлу з сontainer
-	res.render('index', {
-		name: 'index',
-		component: [],
-		title: 'Home page',
-		data: {},
+	res.render('signup', {
+		name: 'signup',
+		component: ['back-button', 'field', 'field-password', 'field-checkbox', 'field-select'],
+		title: 'Signup page',
+		data: {
+			role: [
+				{
+					value: User.USER_ROLE.USER,
+					text: 'Користувач'
+				},
+				{
+					value: User.USER_ROLE.ADMIN,
+					text: 'Адміністратор'
+				},
+				{
+					value: User.USER_ROLE.DEVELOPER,
+					text: 'Розробник'
+				}
+			]
+		},
 	})
 	// ↑↑ сюди вводимо JSON дані
 })
 
-// Підключіть файли роутів
-const auth = require('./auth')
-// Підключіть інші файли роутів, якщо є
-
-// Об'єднайте файли роутів за потреби
-router.use('/', auth)
-// Використовуйте інші файли роутів, якщо є
-
-// Експортуємо глобальний роутер
+// Підключаємо роутер до бек-енду
 module.exports = router
