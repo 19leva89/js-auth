@@ -24,7 +24,7 @@ class SignupForm extends Form {
 			return this.FIELD_ERROR.IS_EMPTY
 		}
 
-		if (String(value).length > 20) {
+		if (String(value).length > 25) {
 			return this.FIELD_ERROR.IS_BIG
 		}
 
