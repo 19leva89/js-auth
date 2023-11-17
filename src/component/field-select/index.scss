@@ -58,7 +58,7 @@
 		padding: s.space(4);
 		border: 1px solid s.color(box);
 		border-radius: 10px;
-		overflow: scroll;
+		overflow-y: auto;
 		background: s.color(background);
 		max-height: 160px;
 		z-index: 1;

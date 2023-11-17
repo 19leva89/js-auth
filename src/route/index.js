@@ -16,10 +16,19 @@ router.get('/', function (req, res) {
 	res.render('index', {
 		name: 'index',
 		component: [],
-		title: 'Home page',
+		title: 'Index page',
 		data: {},
 	})
 	// ↑↑ сюди вводимо JSON дані
+})
+
+router.get('/home', function (req, res) {
+	res.render('home', {
+		name: 'home',
+		component: [],
+		title: 'Home page',
+		data: {},
+	})
 })
 
 // Підключіть файли роутів

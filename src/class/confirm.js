@@ -4,7 +4,6 @@ class Confirm {
 	constructor(data) {
 		this.code = Confirm.generateCode()
 		this.data = data
-
 	}
 
 	static generateCode = () => {
@@ -34,6 +33,4 @@ class Confirm {
 	}
 }
 
-module.exports = {
-	Confirm
-}
+module.exports = { Confirm }
