@@ -31,6 +31,15 @@ router.get('/home', function (req, res) {
 	})
 })
 
+router.get('/logout', function (req, res) {
+	res.render('logout', {
+		name: 'logout',
+		component: [],
+		title: 'Logout page',
+		data: {},
+	})
+})
+
 // Підключіть файли роутів
 const auth = require('./auth')
 // Підключіть інші файли роутів, якщо є
