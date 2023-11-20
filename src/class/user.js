@@ -43,6 +43,12 @@ class User {
 	static getByEmail(email) {
 		return (this.#list.find((user) => user.email === String(email).toLowerCase()) || null)
 	}
+
+	static getList = () => this.#list
+
+	static getById(id) {
+		return (this.#list.find((user) => user.id === Number(id)) || null)
+	}
 }
 
 module.exports = { User }
